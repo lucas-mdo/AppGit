@@ -6,14 +6,14 @@
     <ScrollView>
         <StackLayout Padding="10" Orientation="Vertical">
             <StackLayout Orientation="Horizontal">
-                <Entry HorizontalOptions="FillAndExpand" />
+                <Entry HorizontalOptions="FillAndExpand"/>
                 <Button Text="Search" HorizontalOptions="End"/>
             </StackLayout>
 
             <ListView x:Name="ListViewRepositories">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <ImageCell ImageSource="" Text="" Detail=""/>
+                        <ImageCell ImageSource="" Text="{Binding Login}" Detail="{Binding Name}"/>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
