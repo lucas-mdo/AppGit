@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Net.Http;
 
 namespace AppGit.Services
 {
@@ -14,8 +15,7 @@ namespace AppGit.Services
 
         public ServiceBase()
         {
-            Client = new HttpClient();
-            Client.BaseAddress = new Uri(BASE_URL);
+            Client = new HttpClient {BaseAddress = new Uri(BASE_URL)};
         }
 
     }
