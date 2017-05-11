@@ -4,20 +4,24 @@
              x:Class="AppGit.Pages.UsersPage"
              Title="UsersPage">
     <ScrollView>
-        <StackLayout Padding="10" Orientation="Vertical">
-            <StackLayout Orientation="Horizontal">
-                <Entry HorizontalOptions="FillAndExpand"/>
-                <Button Text="Search" HorizontalOptions="End"/>
-            </StackLayout>
-
-            <ListView x:Name="ListViewRepositories">
+        <Grid Padding="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Entry Grid.Row="0" Grid.Column="0" HorizontalOptions="FillAndExpand"/>
+            <Button Grid.Row="0" Grid.Column="1" Text="Search" HorizontalOptions="End"/>
+            <ListView Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" x:Name="ListViewRepositories" ItemsSource="{Binding UsersCollection}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <ImageCell ImageSource="TO DO: bind avatarUrl" Text="TO DO: bind login" Detail="TO DO: bind name"/>
+                        <ImageCell ImageSource="{Binding AvatarUrl}" Text="{Binding Login}" Detail="{Binding Name}"/>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-
-        </StackLayout>
+        </Grid>
     </ScrollView>
 </ContentPage>
