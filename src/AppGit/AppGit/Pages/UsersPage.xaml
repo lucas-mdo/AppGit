@@ -13,7 +13,7 @@
             <ListView x:Name="ListViewRepositories">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <ImageCell ImageSource="" Text="{Binding Login}" Detail="{Binding Name}"/>
+                        <ImageCell ImageSource="TO DO: bind avatarUrl" Text="TO DO: bind login" Detail="TO DO: bind name"/>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
