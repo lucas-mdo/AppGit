@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using AppGit.ViewModel;
+using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace AppGit.Pages
@@ -10,6 +11,7 @@ namespace AppGit.Pages
         public UsersPage()
         {
             InitializeComponent();
+            BindingContext = new UsersViewModel();
         }
     }
 }
