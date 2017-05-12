@@ -10,24 +10,56 @@ namespace AppGit.ViewModel
 {
     public class UsersViewModel : BaseViewModel
     {
-        public UsersViewModel()
+        public UsersViewModel(Repository repo)
         {
-            UsersCollection = new ObservableCollection<User>();
-
-            for (int i = 0; i < 10; i++)
-            {
-                UsersCollection.Add(new User(){ Login = $"Login {i}", Name = $"Name {i}", AvatarUrl = ":)"});
-            }
+            AvatarUrl = repo.Owner.AvatarUrl;
+            Login = repo.Owner.Login;
+            Site = repo.Owner.HtmlUrl;
+            IsForked = repo.IsForked;
+            IsPrivate = repo.IsPrivate;
+            Name = repo.Name;
+            Description = repo.Description;
+            RepoUrl = repo.HtmlUrl;
         }
 
-        public ObservableCollection<User> UsersCollection;
+        private string _avatarUrl;
 
-        /*private string _login;
+        public string AvatarUrl
+        {
+            get { return _avatarUrl; }
+            set { SetProperty(ref _avatarUrl, value); }
+        }
+
+        private string _login;
 
         public string Login
         {
             get { return _login; }
             set { SetProperty(ref _login, value); }
+        }
+
+        private string _site;
+
+        public string Site
+        {
+            get { return _site; }
+            set { SetProperty(ref _site, value); }
+        }
+
+        private bool _isForked;
+
+        public bool IsForked
+        {
+            get { return _isForked; }
+            set { SetProperty(ref _isForked, value); }
+        }
+
+        private bool _isPrivate;
+
+        public bool IsPrivate
+        {
+            get { return _isPrivate; }
+            set { SetProperty(ref _isPrivate, value); }
         }
 
         private string _name;
@@ -38,13 +70,22 @@ namespace AppGit.ViewModel
             set { SetProperty(ref _name, value); }
         }
 
-        private string _avatarUrl;
+        private string _description;
 
-        public string AvatarUrl
+        public string Description
         {
-            get { return _avatarUrl; }
-            set { SetProperty(ref _avatarUrl, value); }
-        }*/
+            get { return _description; }
+            set { SetProperty(ref _description, value); }
+        }
+
+        private string _repoUrl;
+
+        public string RepoUrl
+        {
+            get { return _repoUrl; }
+            set { SetProperty(ref _repoUrl, value); }
+        }
+
 
     }
 }
