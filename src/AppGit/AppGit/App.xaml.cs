@@ -8,7 +8,7 @@ namespace AppGit
         {
             InitializeComponent();
 
-            MainPage = new AppGit.Pages.UsersPage();
+            MainPage = new NavigationPage(new Pages.RepositoriesPage());
         }
 
         protected override void OnStart()
