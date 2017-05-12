@@ -4,24 +4,38 @@
              x:Class="AppGit.Pages.UsersPage"
              Title="UsersPage">
     <ScrollView>
-        <Grid Padding="10">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="Auto"/>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
-            <Entry Grid.Row="0" Grid.Column="0" HorizontalOptions="FillAndExpand"/>
-            <Button Grid.Row="0" Grid.Column="1" Text="Search" HorizontalOptions="End"/>
-            <ListView Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" x:Name="ListViewRepositories" ItemsSource="{Binding UsersCollection}">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ImageCell ImageSource="{Binding AvatarUrl}" Text="{Binding Login}" Detail="{Binding Name}"/>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-        </Grid>
+        <StackLayout Padding="10" Orientation="Vertical">
+            <Image HorizontalOptions="Center" VerticalOptions="Center"></Image>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0" Grid.Column="0" Text="Owner: "/>
+                <Label Grid.Row="0" Grid.Column="1" Text="{Binding UserName} "/>
+                <Label Grid.Row="1" Grid.Column="0" Text="Site: "/>
+                <Label Grid.Row="1" Grid.Column="1" Text="{Binding UserHtmlUrl} "/>
+                <Label Grid.Row="2" Grid.Column="0" Text="Forked: "/>
+                <Label Grid.Row="2" Grid.Column="1" Text="{Binding IsForked}"/>
+                <Label Grid.Row="3" Grid.Column="0" Text="Private: "/>
+                <Label Grid.Row="3" Grid.Column="1" Text="{Binding IsPrivate}"/>
+                <Label Grid.Row="4" Grid.Column="0" Text="Name: "/>
+                <Label Grid.Row="4" Grid.Column="1" Text="{Binding Name}"/>
+                <Label Grid.Row="5" Grid.Column="0" Text="Description: "/>
+                <Label Grid.Row="5" Grid.Column="1" Text="{Binding Description}"/>
+                <Label Grid.Row="6" Grid.Column="0" Text="Url: "/>
+                <Label Grid.Row="6" Grid.Column="1" Text="{Binding RepoHtmlUrl}"/>
+
+            </Grid>
+        </StackLayout>
     </ScrollView>
 </ContentPage>
